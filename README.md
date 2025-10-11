@@ -8,3 +8,6 @@ Group 4408
 3) kto ispravit etot file tomu - rastrel, potom ban.
 4) po vsem voprosam idite k Ione. K drugomu - ban, potom rastrel.
 5) mi ne lybim USSR (SS ne schitaetsya)
+
+
+Вы долбоёбы? вы по русски не умеете писать?
