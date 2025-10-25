@@ -14,7 +14,7 @@ int main() {
     int A[24][24];
     int i, j;
 
-    // Инициализация матрицы нулями
+    // Fulling of 0
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
             A[i][j] = 0;
@@ -23,7 +23,7 @@ int main() {
 
     int num = 1;
 
-    // Заполнение перевернутого треугольника
+    // Fulling revers tringl
     for (i = 0; i <= n / 2; i++) {
         for (j = i; j < n - i; j++) {
             A[i][j] = num;
@@ -31,7 +31,7 @@ int main() {
         }
     }
 
-    // Вывод матрицы
+    // print matrica
     printf("\nMatrica A:\n", n, n);
     for (i = 0; i < n; i++) {
         for (j = 0; j < n; j++) {
@@ -41,4 +41,5 @@ int main() {
     }
 
     return 0;
+
 }
