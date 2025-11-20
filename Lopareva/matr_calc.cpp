@@ -10,7 +10,7 @@ int main() {
     cout << "Columns = ";
     cin >> c;
 
-    // Проверка на допустимые размеры
+    // Cekc up
     if (r <= 0 || c <= 0) {
         cout << "Error: Dimensions must be positive" << endl;
         return 1;
@@ -23,7 +23,7 @@ int main() {
     int res_u[10][10];
     float res_d[10][10];
 
-    // Ввод матриц
+    // Enter the matrix
     cout << "Matrix 1: " << r << " x " << c << endl;
     for (int i = 0; i < r; i++) {
         for (int j = 0; j < c; j++) {
@@ -47,17 +47,17 @@ int main() {
             res_v[i][j] = mat1[i][j] - mat2[i][j];
             res_u[i][j] = mat1[i][j] * mat2[i][j];
 
-            // Деление с проверкой на ноль
+            // Delenie
             if (mat2[i][j] != 0) {
                 res_d[i][j] = (float)mat1[i][j] / (float)mat2[i][j];
             }
             else {
-                res_d[i][j] = 0; // или другое значение по умолчанию
+                res_d[i][j] = 0; // 
             }
         }
     }
 
-    // Вывод результатов
+    // Results
     cout << "\nMatrix 1: \n";
     for (int i = 0; i < r; i++) {
         for (int j = 0; j < c; j++) {
@@ -103,5 +103,6 @@ int main() {
         }
         cout << endl;
     }
+
 
 }
