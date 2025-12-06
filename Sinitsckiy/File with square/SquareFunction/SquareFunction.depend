@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1765010301 source:c:\users\cc-ulkb612\desktop\file with square\squarefunction\main.cpp
+	<iostream>
+	"FuncHeader.h"
+
+1765006902 c:\users\cc-ulkb612\desktop\file with square\squarefunction\funcheader.h
+
+1765009348 source:c:\users\cc-ulkb612\desktop\file with square\squarefunction\functions.cpp
+	<iostream>
+	"FuncHeader.h"
+	<math.h>
+
