@@ -1,0 +1,73 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+
+
+
+
+class Figure
+{
+
+    // Coordinate; Triangle; Rectangle; Quadrilateral; Circle;
+    // ввод, вывод, абстрактный класс (прототип, в хедер)
+
+
+
+
+
+
+
+public:
+    std::string name{};
+    std::vector<int> parametrs {};
+    Figure (std::string p_name, std::string p_parametrs, int countt=0){
+        name = p_name;
+
+        if (name == "Circle"){
+            parametrs.push_back(stoi(p_parametrs));}
+        else{
+            std::string num = "";
+            for (int i=0; i<p_parametrs.length(); i++){
+                if (p_parametrs[i] == ' '){
+                    parametrs.push_back(stoi(num));
+                    std::cout<<num<<std::endl;
+                    num = "";}
+
+                else{
+                    num+= p_parametrs[i];
+                }}}
+
+    }
+
+    void square(){
+    if (name == "Coordinate"){
+
+
+        std::cout<<1;}
+    if (name == "Triangle"){
+        int s = (parametrs[0] + parametrs[1] + parametrs[2])/2;
+        std::cout << pow((s*(s-parametrs[0])*(s-parametrs[1])*(s-parametrs[2])),0.5);}
+    if (name == "Rectangle"){
+        std::cout<<parametrs[0]*parametrs[1];}
+    if (name == "Quadrilateral"){
+        std::cout<<parametrs[0]*parametrs[1];}
+    if (name == "Circle"){
+        std::cout<< parametrs[0] * parametrs[0] *3.14;}
+
+    }
+
+
+
+};
+
+int main()
+{
+    std::string type;
+    std::cin>>type;
+    std::string nummm;
+    std::cin>>nummm;
+
+    Figure op{type, nummm};
+    op.square();
+}
+
