@@ -10,4 +10,3 @@ Group 4408
 5) mi ne lybim USSR (SS ne schitaetsya)
 
 
-Вы долбоёбы? вы по русски не умеете писать?
