@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1769850068 source:c:\users\cc-ulkb612\desktop\pervoe zadanie\zadanie\main.cpp
+	<iostream>
+	<iomanip>
+	<ctime>
+
