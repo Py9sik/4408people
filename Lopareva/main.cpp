@@ -1,63 +1,70 @@
 #include <iostream>
+#include <vector>
 #include <ctime>
+#include <fstream>
+
 using namespace std;
 
 int main()
-/*{
-    int* a = new int; // указатель на целое число
-
-    cout<<"Enter a: ";
-    cin>> *a;
-
-    bool* b = new bool;
-
-    *b=(*a==0); //*a==0 - сравниваем значение с  0
-
-    cout<<"Meaning b: "<< boolalpha<< *b<<endl; // boolalpha transform 1/0 in true and false
-
-    delete a;
-    delete b;
-} */
 {
-    int n;
+   int n;
+   cout<<"Enter size of massive: ";
+   cin>> n;
+
+   vector <int> arr;
+
+   int choice;
+   cout<<"Fulling from file(1) or fulling with random numbers (2)? ";
+   cin>> choice;
+
+   if (choice == 1){
+
+    string filename;
+    cout<<"Files name: ";
+    cin>> filename;
+
+    ifstream file(filename);
+
+    for (int i =0; i<n; i++){
+        int j;
+        file>>j;
+        arr.push_back(j);
+    }
+    file.close();
+   }
+   else{
     srand(time(0));
-
-    cout<<"Size: "<< endl;
-    cin>> n;
-
-    int** ar = new int*[n];
-
-    for (int i = 0;i < n; i++ ){
-
-        ar[i]=new int [n];
-    }
-    //fulling massive
-    cout<<"Massive: "<<endl;
-    for (int i = 0; i< n; i++){ //number of line
-        for (int j = 0; j<n; j++){ // number of column
-
-            ar[i][j]=rand()%101-50;
-            cout<<ar[i][j]<<"\t";
-            }
-            cout<<endl;
-        }
-
-    int sumM=0;
     for(int i=0;i<n;i++){
-        sumM+=ar[i][i];
+        arr.push_back(rand() % 1000);
     }
-    int sumS=0;
-    for(int i=0;i<n;i++){
-        sumS+=ar[i][n-1-i];
-    }
-    int maxS;
-    if(sumM>sumS){
-        maxS=sumM;
-    } else{
-        maxS=sumS;
-    }
-    cout<<"Sum main diagonal: "<<sumM<<endl;
-    cout<<"Sum secondary diagonal: "<<sumS<<endl;
-    cout<<"Max summa: "<<maxS<<endl;
+   }
 
+   int max=arr[0], min=arr[0];
+   double sum=0;
+   for(int num : arr){
+    if(num>max) max=num;
+    if (num<min) min=num;
+    sum+=num;
+   }
+   double sz = sum/n;
+   cout<<"Output in file(1) or output on screen(2)? ";
+   cin>>choice;
+
+   if (choice == 1){
+    string filename;
+    cout<<"Files name: ";
+    cin>>filename;
+
+    ofstream file(filename);
+    file<<"Maximum: "<<max<<endl;
+    file<<"Minimum: "<<min<<endl;
+    file<<"Medium meaning: "<<sz<<endl;
+    file.close();
+   }
+   else{
+    cout<<"Maximum: "<<max<<endl;
+    cout<<"Minimum: "<<min<<endl;
+    cout<<"Medium meaning: "<<sz<<endl;
+   }
+   return 0;
 }
